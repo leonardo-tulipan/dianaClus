@@ -11,7 +11,7 @@ df_for_n2d = pd.concat([numerical, categorical * 1], axis=1)
 X = df_for_n2d.values
 
 def approx_predict(manifold_name, encoder_name, newdata):
-    man = pickle.load(open(f"{PATH_M}{manifold_name}",'rb'))
+    man = pickle.load(open(f"{PATH_M}{manifold_name}",'rb')) 
     umap_obj = man.manifold_in_embedding
     encoder = load_model(f"{PATH_M}{encoder_name}")
     embedding = encoder.predict(newdata)

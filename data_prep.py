@@ -3,10 +3,10 @@ import pandas as pd
 from config import PATH
 from utils import extract_numerical, extract_categorical
 
-dfc0 = pd.read_csv(f"{PATH}ventasxsemanaclus1308.csv")
+dfc0 = pd.read_csv(f"{PATH}ventasxsemanaclus2908.csv")
 cols = [f"{i}_tot" for i in range(100) if f"{i}_tot" in dfc0.columns]
 cols += ['TOTAL_NETO_T','Momentum',
-         'freqmes', 'dias_compra', 'recency_class']
+         'freqmes', 'dias_compra', 'recency_class', 'estrato']
 
 dfc = dfc0[cols].copy() 
 numerical = dfc.select_dtypes(include=["float", "int"])
